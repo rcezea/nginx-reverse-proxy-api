@@ -3,7 +3,11 @@
 This is a simple API built with FastAPI to demonstrate a lightweight backend service that can be used behind an Nginx reverse proxy.
 
 ---
+## 🌐 Live Deployment
 
+Base URL:
+http://devops.rclancing.dev/
+---
 ## 📦 Repository
 
 ```
