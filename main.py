@@ -1,9 +1,17 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 # Initialize FastAPI application
 
 api = FastAPI()
+
+# Configure CORS to allow external access
+api.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins
+    allow_methods=["GET"],  # Allow GET method
+)
 
 
 @api.get("/")
