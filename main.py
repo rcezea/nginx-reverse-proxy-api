@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
 # Initialize FastAPI application
 
@@ -11,6 +12,12 @@ api.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Allow all origins
     allow_methods=["GET"],  # Allow GET method
+)
+
+# Add Trusted Host Middleware
+api.add_middleware(
+    TrustedHostMiddleware,
+    allowed_hosts=["localhost", "127.0.0.1"]
 )
 
 
